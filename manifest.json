@@ -1,0 +1,28 @@
+{
+
+  "manifest_version": 2,
+  "name": "IG download button",
+  "version": "0.1",
+  "description": "Adds downalod and full-size view buttons to images on instagram.com",
+
+  "icons": {
+    "48": "icons/addon-icon.svg",
+    "96": "icons/addon-icon.svg"
+  },
+
+  "permissions": [
+    "downloads",
+    "tabs",
+    "*://*.instagram.com/*",
+    "*://*.cdninstagram.com/*",
+    "*://*.fbcdn.net/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["extension.js"]
+    }
+  ]
+
+}
