@@ -86,7 +86,7 @@ function getSourceLink () {
     ? parent.querySelector('video') || parent.querySelector('img')
     : detectIndex(parent, parent.querySelectorAll('li.Ckrof'))
   const link = file.srcset ? findBestQuality(file.srcset) : file.src
-  return link
+  return link || alert('No data available')
 }
 
 function detectIndex (parent, files) {
@@ -108,7 +108,7 @@ function findBestQuality (srcset) {
     Object.assign(srcsObj, Object.fromEntries([srcs.splice(0,2)]))
   }
   return srcsObj[Math.max(...Object.keys(srcsObj)
-    .map(key => Number.parseInt(key))) + 'w'] || alert('No data available')
+    .map(key => Number.parseInt(key))) + 'w']
 }
 
 function downloadImage () {
